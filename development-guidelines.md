@@ -3,8 +3,8 @@
 
 На всех девелоперских машинах обязательно иметь настроенными
 
-git config --global user.name "User Name"
-git config --global user.email "user@example.com"
+  git config --global user.name "User Name"
+  git config --global user.email "user@example.com"
 
 У каждого коммиттера должна быть своя уникальная пара user.name / user.email,
 чтобы знать, кого бить по рукам в случае чего. Коммиттеры не должны использовать
@@ -12,10 +12,10 @@ git config --global user.email "user@example.com"
 
 Рекомендуется также настроить (по вкусу)
 
-git config --global rerere.enabled true
-git config --global color.diff auto
-git config --global color.interactive auto
-git config --global color.status auto
+  git config --global rerere.enabled true
+  git config --global color.diff auto
+  git config --global color.interactive auto
+  git config --global color.status auto
 
 Коммиты
 =======
