@@ -18,9 +18,11 @@
     git config --global color.status auto
 
 Ставим git-email для отправки готовых фичей на ревью лидам проекта
+
     sudo apt-get install git-email
 
 Правим конфиг send-email на отсылку патчей (используем gmail'овский smtp сервер)
+
     git config --global sendemail.smtpserver smtp.gmail.com
     git config --global sendemail.smtpserverport 587
     git config --global sendemail.smtpencryption tls
@@ -85,21 +87,23 @@ maintainer.
 В зависимости от проекта и библиотеки могут быть шорткаты для тестирования —
 спрашивайте лидов :)
 
-Отсылка ветки в виде patch коммитов на ревью кода лидом проекта.
+## Отсылка ветки в виде patch series на ревью кода лидом проекта.
 
 Формируем patch'и
+
     git format-patch --cover-letter master
 
-Открываем файл 0000-cover-letter.patch на редактирование:
-1. Правим 4 строчку Subject: [PATCH 0/3] *** SUBJECT HERE ***
-    И вместо *** SUBJECT HERE *** пишем свой заголовок письма вида:
-    'Название_фичи [имя_ветки] {id_задачи_в_redmine}'
+Открываем файл `0000-cover-letter.patch` на редактирование:
+
+1. Правим 4-ю строчку `Subject: [PATCH 0/3] *** SUBJECT HERE ***`
+   И вместо `*** SUBJECT HERE ***` пишем свой заголовок письма вида:
+   `'Название_фичи [имя_ветки] {id_задачи_в_redmine}'`
 
 2. Ниже добавляем описание что и как было сделано по задаче.
 
-Отсылаем на ревью
+Отсылаем на ревью:
+
     git send-email --to 'review_email' *.patch
     
-Внимание!
-Максимальный размер письма в 4Мб.
-Будьте аккуратны и не отсылайте графические ресурсы в двоичном коде на ревью!
+*Внимание!* Максимальный размер письма в 4Мб. Будьте аккуратны и не отсылайте графические ресурсы 
+в бинарном коде на ревью!
