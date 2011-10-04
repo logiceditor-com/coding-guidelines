@@ -117,9 +117,9 @@ Private vs. public
 O = new function()
 {
   var private_variable_;
-  var private_function_()
+  function private_function_()
   {
-    //Some private here
+    //Some privacy here
   }
   
   this.public_function()
