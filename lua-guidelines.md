@@ -147,8 +147,7 @@ function. Закрывающая скобка вызова ставится не
 пробела между ними. Допускается запись в одну строку: foo(function(args) body()
 end)
 
-Директива import
-================
+### Директива import
 
 Для разбиения по строкам директивы import применяется специальное
 форматирование, сложившееся исторически.
@@ -167,28 +166,30 @@ end)
 с форматированием при присваивании списка переменных).
 
 Пример:
-local arguments,
-      optional_arguments,
-      method_arguments
-      = import 'lua-nucleo/args.lua'
-      {
-        'arguments',
-        'optional_arguments',
-        'method_arguments'
-      }
+
+    local arguments,
+          optional_arguments,
+          method_arguments
+          = import 'lua-nucleo/args.lua'
+          {
+            'arguments',
+            'optional_arguments',
+            'method_arguments'
+          }
 
 Если список импорта состоит из одного элемента, то директива import может
 форматироваться либо в одну строку, с соблюдением всех общих правил, либо
 разбиваться по строкам, как описано выше.
 
 Пример:
-local is_table = import 'lua-nucleo/type.lua' { 'is_table' }
 
-local is_table
-      = import 'lua-nucleo/type.lua'
-      {
-        'is_table'
-      }
+    local is_table = import 'lua-nucleo/type.lua' { 'is_table' }
+
+    local is_table
+          = import 'lua-nucleo/type.lua'
+          {
+            'is_table'
+          }
 
 FIXME: Нужно описать: return and or, нестандартный сдвиг влево при
 конкатенации, многострочное условие if-then while-do for-do, (что ещё?!)
