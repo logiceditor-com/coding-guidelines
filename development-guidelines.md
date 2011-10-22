@@ -91,7 +91,7 @@ maintainer.
 
 Формируем patch'и
 
-    git format-patch --cover-letter master
+    git format-patch -n --cover-letter master
 
 Открываем файл `0000-cover-letter.patch` на редактирование:
 
