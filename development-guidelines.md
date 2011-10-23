@@ -29,6 +29,10 @@
     git config --global sendemail.smtpuser your_email@gmail.com
     git config --global sendemail.smtppass your_password
 
+Для правильной нумерации патчей в патчсетах, отправляемых на ревью, делаем:
+
+    git config --global format.numbered true
+
 Коммиты
 =======
 
