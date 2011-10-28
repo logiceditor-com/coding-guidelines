@@ -30,6 +30,8 @@
     git config --global sendemail.smtppass your_password
     git config --global sendemail.assume8bitEncoding = utf-8
 
+(Последний пункт необходим и тем, кто gmail для отсылки патчей не использует.)
+
 Для правильной нумерации патчей в патчсетах, отправляемых на ревью, делаем:
 
     git config --global format.numbered true
