@@ -498,3 +498,27 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 надо использовать select(n, ...)
 * string.len - вместо него надо использовать оператор длины #
 * table.getn - вместо него надо использовать оператор длины #
+
+
+Подключение логгеров
+====================
+
+Логгеры должны присутствовать в каждом файле каждой библиотеки ниже lua-aplicado.
+Логгеры подключаются в самом начале файла так (пример из
+pk-tools/src/lua/update-subtrees/run.lua)
+
+    local log, dbg, spam, log_error
+         = import 'pk-core/log.lua' { 'make_loggers' } (
+             "update-subtrees", "UST"
+           )
+
+Логгеры в файлах тестов именуются аналогично примеру ниже (пример из
+pk-core/test/cases/0010-config-dsl.lua)
+
+    local log, dbg, spam, log_error
+         = import 'pk-core/log.lua' { 'make_loggers' } (
+             "test/config_dsl", "T001"
+           )
+
+Если правите файл, в котором они подключены по старой схеме (с отдельным импортом
+make_loggers), желательно отдельным коммитом привести его в современный вид.
