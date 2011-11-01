@@ -153,19 +153,19 @@ patch series на ревью кода лидом проекта.
 4. Вместо `pk-format-patch` рекомендуется использовать утилиту `pk-git-format-patch` из комплекта `pk-git-utils`
    http://github.com/logiceditor-com/pk-git-utils
 
-   Утилиты не требуют установки, достаточно добавить `scripts/` оттуда в `PATH`, или
-   сделать симлинк в `~/bin`, или иной каталог который уже перечислен в `PATH`:
+    Утилиты не требуют установки, достаточно добавить `scripts/` оттуда в `PATH`, или
+    сделать симлинк в `~/bin`, или иной каталог который уже перечислен в `PATH`:
 
-    mkdir -p ~/bin
-    cd ~/projects && git clone http://github.com/logiceditor-com/pk-git-utils
-    ln -s ~/projects/pk-git-utils/scripts/pk-git-format-patch ~/bin
+        mkdir -p ~/bin
+        cd ~/projects && git clone http://github.com/logiceditor-com/pk-git-utils
+        ln -s ~/projects/pk-git-utils/scripts/pk-git-format-patch ~/bin
 
-   и добавьте в `.bashrc`:
+    и добавьте в `.bashrc`:
 
-    export PATH=~/bin:$PATH
+        export PATH=~/bin:$PATH
 
-   Утилита `pk-git-format-patch` является "надстройкой" над стандартным format-patch,
-   и форматирует заголовок письма как рекомендовано в данном документе.
+    Утилита `pk-git-format-patch` является "надстройкой" над стандартным format-patch,
+    и форматирует заголовок письма как рекомендовано в данном документе.
 
 ###Отправляем на ревью
 
