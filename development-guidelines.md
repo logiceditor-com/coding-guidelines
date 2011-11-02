@@ -28,7 +28,7 @@
     git config --global sendemail.smtpencryption tls
     git config --global sendemail.smtpuser your_email@gmail.com
     git config --global sendemail.smtppass your_password
-    git config --global sendemail.assume8bitEncoding = utf-8
+    git config --global sendemail.assume8bitEncoding utf-8
 
 (Последний пункт необходим и тем, кто gmail для отсылки патчей не использует.)
 
