@@ -12,4 +12,5 @@
 *.kdevelop
 *.kdevses
 /Doxyfile
-
+.kdev4/*
+*.kdev4
