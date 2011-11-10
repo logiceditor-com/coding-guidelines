@@ -106,7 +106,7 @@ need_*, should_*, must_*, in_*, not_* и т.п.
 Правила расстановки отступов
 ============================
 
-FIXME: Нужны примеры! Пока — смотрите на код. -Alexander Gladysh 24.11.09 22:55 
+FIXME: Нужны примеры! Пока — смотрите на код. -Alexander Gladysh 24.11.09 22:55
 
 По умолчанию следует избегать разницы в отступах на соседних непустых строках
 большей чем в один отступ (кроме специально оговорённых случаев).
@@ -164,9 +164,9 @@ begin()-end()-подобными парными конструкциями.
 строке. Отступы в объявлении функции оформляются аналогично.
 
     long_function_name(
-        with, 
-        many, 
-        many, 
+        with,
+        many,
+        many,
         parameters
       )
 
@@ -182,7 +182,7 @@ function. Закрывающая скобка вызова ставится не
     fn(function(args)
       return some_stuff()
     end)
-    
+
     foo(function(args) body() end)
 
 Некоторы комплексные и смешанные примеры (добавляем по мере возникновения вопросов):
@@ -203,7 +203,7 @@ function. Закрывающая скобка вызова ставится не
 
 2.
 
-    machine.installed_rocks_set, machine.duplicate_rocks_set 
+    machine.installed_rocks_set, machine.duplicate_rocks_set
         = luarocks_parse_installed_rocks(
             remote_luarocks_list_installed_rocks(
                 machine.external_url
@@ -220,19 +220,19 @@ function. Закрывающая скобка вызова ставится не
 
 4.
 
-    longname_a = longname_b 
+    longname_a = longname_b
       [logic_operand] longname_c
 
 5.
 
     if
        long_function_name(
-             with, 
-             many, 
-             many, 
+             with,
+             many,
+             many,
              parameters
          ) == other_long_function(
-             the, 
+             the,
              same
          )
     then
@@ -291,9 +291,9 @@ function. Закрывающая скобка вызова ставится не
           = import 'lua-nucleo/type.lua'
           {
             'is_table'
-            
+
 ### Многострочные константы
-         
+
 Для строк, заключенных в long brackets, правила для отступов **не действуют**.
 Отступы расставляются так, чтобы при выводе строка выглядела так, как нужно.
 
@@ -304,7 +304,7 @@ function. Закрывающая скобка вызова ставится не
     Config format:
 
     ]])
-  
+
       io.stdout:flush()
 
 FIXME: Нужно описать: return and or, нестандартный сдвиг влево при
@@ -357,7 +357,7 @@ FIXME: Нужно описать: return and or, нестандартный сд
 (например какой-нибудь count_number_of_keys()).
 
 Правильно:
-    
+
     api:input { };
 
     api:input
@@ -398,7 +398,7 @@ FIXME: Нужно описать: return and or, нестандартный сд
       arguments(
           "quo", bar
         )
-  
+
 Конструкторы таблиц
 ===================
 
@@ -475,7 +475,7 @@ FIXME: Раскрыть; описать варианты с метатаблиц
     do
       local method = function(self, args)
       end
-      
+
       make_myobject = function(args)
         return
           {
