@@ -552,14 +552,14 @@ make_loggers), желательно отдельным коммитом прив
 
 Неверно:
 
-    local t = { key = "value }
+    local t = { key = "value" }
     local n = 123
     local b = false
     log(tstr(t), tostring(n), tostring(b))
 
 Верно:
 
-    local t = { key = "value }
+    local t = { key = "value" }
     local n = 123
     local b = false
     log(t, n, b)
