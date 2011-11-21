@@ -36,7 +36,10 @@ else
 
 ```javascript
 if (price > 0)
-  foo()
+  foo();
+  
+for (var i=0; i<10; i++)
+  foo(i);
 ```
 
 Правильная запись:
@@ -44,7 +47,12 @@ if (price > 0)
 ```javascript
 if (price > 0)
 {
-  foo()
+  foo();
+}
+
+for (var i=0; i<10; i++)
+{
+  foo(i);
 }
 ```
 
