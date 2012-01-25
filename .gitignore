@@ -14,3 +14,5 @@
 /Doxyfile
 .kdev4/*
 *.kdev4
+
+.idea
