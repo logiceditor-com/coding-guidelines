@@ -375,6 +375,30 @@ FIXME: Нужно описать: return and or, нестандартный сд
     api:input
     { };
 
+Циклы
+=====
+
+* Запрещается использовать `ipairs()`. Вместо него — numeric for.
+
+* По возможности нужно избегать конкатенации в цикле с использованием
+  переменной-аккумулятора. Вместо этого используйте concatter.
+
+  Нежелательно:
+
+    local s = ""
+    for ... do
+      s = s .. "something" .. foo()
+    end
+    return s
+
+  Желательно:
+
+    local cat, concat = make_concatter()
+    for ... do
+      cat "something" (foo())
+    end
+    return concat()
+
 Функции
 =======
 
