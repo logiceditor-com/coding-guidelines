@@ -36,6 +36,12 @@
 
     git config --global format.numbered true
 
+Если в проекте есть etc/git/hooks, то его нужно обязательно подключить: находясь
+в корневой директории проекта выполнить
+
+    rm -r .git/hooks
+    ln -s ../etc/git/hooks/ .git/hooks
+
 Коммиты
 =======
 
