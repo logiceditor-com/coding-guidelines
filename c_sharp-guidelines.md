@@ -70,7 +70,6 @@ Code conventions
     int a = (int) b;
 
 После ключевых слов `if`, `while`, `switch` и `catch` ставится пробел.
-После символа комментария обязателен пробел.
 
     if (condition)
     {
@@ -88,6 +87,7 @@ Code conventions
 Комментарии
 -----------
 
+После символа комментария обязателен пробел.
 В пустых функциях нужно писать // Intentionally empty
 
     doNothing()
