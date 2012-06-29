@@ -108,6 +108,15 @@ Code conventions
           .methodName(params)
       ).value = anotherValue;
 
+      (
+        (typeName) className
+          .fieldName
+          .methodName(params)
+      ).method(params);
+
+Такие конструкции со скобками обязательно отбивать переводами строк до и после
+(кроме случаев, когда на следующей строке `{` или `}`).
+
       typeName valueName = (typeName) className
         .fieldName
         .methodName(params);
