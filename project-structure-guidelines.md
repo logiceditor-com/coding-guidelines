@@ -9,9 +9,19 @@
           Assets/
           Library/
           ProjectSettings/
-        [doc/]
+        build/
+          osx/
+            <prototype_name>.app
+          win/
+            <prototype_name>_Data
+            <prototype_name>.exe
+        doc/
       [<project-name>/]
         [package/]
           [<package_name>.unitypackage]
         [doc/]
 
+Общие рекомендации
+==================
+
+Не стоит пользоваться заглавными буквами в именах файлов без крайней нужды.
