@@ -4,7 +4,7 @@
 ## Прототип на движке Unity 3D
 
     <git-repo-name>/
-      prototype/
+      <prototype_name>/
         app/
           Assets/
           Library/
@@ -14,7 +14,7 @@
             <prototype_name>.app/
               Contents/
                 MacOS/
-                  <executable_name>
+                   <prototype_name>
                 ...
           win/
             <prototype_name>_Data
@@ -27,5 +27,6 @@
 
 ### Дополнения
 
-Имя файла `<executable_name>` не должно содержать пробелов, а сам файл должен
-иметь права на исполнение.
+Названия файлов и директорий не должны содержать пробелов.
+
+Исполняемый файл для MacOS должен иметь права на исполнение.
