@@ -566,6 +566,28 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 Предикаты: is_<verb>
 Фабрики: make_<object_name>
 
+Именование тестов
+==================
+
+Имя теста должно описывать, что проверяет тест. Имя должно писаться без пробелов;
+отдельные слова в имени разделяются дефисом.
+
+Примеры:
+
+    test:case "cookie-management" (function()
+      ...
+
+    test "POST-user-defined-Content-Type" (function()
+      ...
+
+Идентификаторы в имени теста пишутся как есть.
+
+Пример:
+
+    test:case "shell_escape-empty-string" (function ()
+        ensure_strequals("shell_escape for an empty string", shell_escape(""), "''")
+    end)
+
 Устаревшие выражения языка
 ============================
 
