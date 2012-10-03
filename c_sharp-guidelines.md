@@ -127,12 +127,13 @@ Code conventions
         ;
 
       classname
-        .method1(
-            params,
-            params
-          )
-        .method2(
-            params,
-            params
-          )
-        .field = value;
+        .method1(
+            params,
+            params
+          )
+        .method2(
+            params,
+            params
+          )
+        .field = value
+        ;
