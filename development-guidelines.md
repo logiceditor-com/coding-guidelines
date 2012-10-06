@@ -243,6 +243,11 @@ patch series на ревью кода лидом проекта.
 
     git send-email --to 'logiceditor-com-review@googlegroups.com' *.patch
 
+Для находящихся на probation - посылать в probation:
+
+    git send-email --to 'logiceditor-com-probation@googlegroups.com' *.patch
+
+
 *Внимание!* Максимальный размер письма в 4Мб. Будьте аккуратны и не отсылайте
 графические ресурсы в бинарном коде на ревью!
 Тексты бинарных файлов, а также тексты внешних ресурсов (библиотек) необходимо
