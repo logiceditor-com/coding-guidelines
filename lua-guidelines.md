@@ -588,8 +588,8 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
         ensure_strequals("shell_escape for an empty string", shell_escape(""), "''")
     end)
 
-Устаревшие выражения языка
-==========================
+Устаревшие и запрещенные выражения языка
+========================================
 
 Текущим стандартом языка является Lua 5.1. Нельзя использовать в коде
 выражения и методы, которые были объявлены в нем устаревшими, даже если они
@@ -600,6 +600,10 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 * `string.len` - вместо него надо использовать оператор длины #
 * `table.getn` - вместо него надо использовать оператор длины #
 
+Некоторые выражения и методы нельзя использовать в коде по соображениям его
+безопасности. К таким в частности относятся:
+
+* `os.tmpname` (см. http://www.lua.org/manual/5.1/manual.html#pdf-os.tmpname)
 
 Подключение логгеров
 ====================
