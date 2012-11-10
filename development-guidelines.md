@@ -120,6 +120,79 @@
 проконсультироваться с мантейнером проекта и АГ для уточнения процедуры релиза
 для конкретного проекта.
 
+## Утилита pk-git-tag-version (справочная информация)
+
+pk-git-tag-version это shell-скрипт, позволяющий устанавливать и инкрементировать
+значение версий текущего репозитория путем добавления тегов с новой версией.
+Хранится в репозитории pk-tools.
+
+Входные параметры:
+
+    $ pk-git-tag-version <suffix> major|minor|build|getlast [--dry-run] [--no-push]
+
+Формат устанавливаемой версии - `<major>.<minor>.<build>-<suffix>`.
+Например `0.1.3-test_suffix`.
+Каждый суффикс версионируется отдельно. Каждое поле версии суффикса
+инкрементируется отдельно.
+
+Параметр major инкрементирует версию major на единицу.
+
+    $ pk-git-tag-version test_suffix major
+    v1.1.3-test_suffix
+
+Параметр minor инкрементирует версию minor на единицу.
+
+    $ pk-git-tag-version test_suffix minor
+    v1.2.3-test_suffix
+
+Параметр build инкрементирует версию build на единицу.
+
+    $ pk-git-tag-version test_suffix build
+    v1.2.4-test_suffix
+
+Параметр getlast отдает информацию по последней версии суффикса.
+
+    $ pk-git-tag-version test_suffix getlast
+    1.2.4-test_suffix
+
+    $ pk-git-tag-version test_suffix_not_exist major
+    0.0.0-test_suffix_not_exist
+
+При запуске с флагом `no-push` `git push --tags origin <newversion>`
+не производится.
+При запуске с флагом `dry-run` теги к коммиту не добавляются.
+
+### Что делает pk-git-tag-version при запуске deploy-rocks (справочная информация)
+
+При запуске скрипта `deploy-rocks` обязательным параметром является целевой
+кластер для выливки. При локальной выливке он выглядит как `localhost-xx`.
+
+В финале подготовки кода проекта к выливке (первая фаза `deploy-rocks`,
+происходящая на машине, где исполняется скрипт), `deploy-rocks` исполняет
+`pk-git-tag-version` на всех репозиториях проекта. Без ключей:
+
+    $ pk-git-tag-version localhost-xx build
+
+если `deploy-rocks` исполняется без ключей `--dru-run` и `--local-only`;
+
+    $ pk-git-tag-version localhost-xx build --dry-run
+
+если `deploy-rocks` исполняется c ключём `--dru-run`;
+
+    $ pk-git-tag-version localhost-xx build --no-push
+
+если `deploy-rocks` исполняется c ключём `--dru-run`.
+
+Таким образом в результате выливки в репозитории `server` и `deployment`
+появляются инкрементированные на младший разряд теги версии выливки с суффиксом
+кластера, на который производилась выливка. Например:
+
+    v0.0.117-localhost-xx
+    v0.0.4-production_cluster_name
+
+При штатных выливках теги версии выливаемого проекта на все боевые сервера
+обычно применены к одному коммиту.
+
 Передача и хранение бинарных файлов вне репозиториев
 ====================================================
 
