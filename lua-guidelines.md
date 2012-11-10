@@ -324,6 +324,15 @@ FIXME: Нужно описать: return and or, нестандартный сд
 
     if(a == b) then -> if a == b then
 
+Но следует ставить скобки вокруг булевых операций в других случаях:
+
+    return (foo and bar)
+    local a = (foo or bar)
+
+но
+
+    f(foo BOOLOP bar, baz)
+
 Синтаксический сахар
 ====================
 
