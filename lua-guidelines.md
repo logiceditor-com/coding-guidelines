@@ -193,7 +193,7 @@ function. Закрывающая скобка вызова ставится не
 
 Некоторы комплексные и смешанные примеры (добавляем по мере возникновения вопросов):
 
-1.
+1)
 
     assert(
         action_handlers[action.tool],
@@ -207,7 +207,7 @@ function. Закрывающая скобка вызова ставится не
         action
       )
 
-2.
+2)
 
     machine.installed_rocks_set, machine.duplicate_rocks_set
         = luarocks_parse_installed_rocks(
@@ -216,7 +216,7 @@ function. Закрывающая скобка вызова ставится не
             )
         )
 
-3. Допускается свешивание `..` при переносах
+3) Допускается свешивание `..` при переносах
 
     writeln_flush(
         "-> blablablablablablablablablabla "
@@ -224,12 +224,12 @@ function. Закрывающая скобка вызова ставится не
     .. "': blablablablablablablablablabla"
     )
 
-4.
+4)
 
     longname_a = longname_b
       [logic_operand] longname_c
 
-5.
+5)
 
     if
        long_function_name(
@@ -245,7 +245,7 @@ function. Закрывающая скобка вызова ставится не
       body
     end
 
-6.
+6)
 
     local func_name = function(
         param1,
@@ -381,8 +381,8 @@ FIXME: Нужно описать: return and or, нестандартный сд
 
 Неправильно:
 
-    api:input
-    { };
+    api:input
+    { };
 
 Циклы
 =====
@@ -394,19 +394,19 @@ FIXME: Нужно описать: return and or, нестандартный сд
 
   Нежелательно:
 
-    local s = ""
-    for ... do
-      s = s .. "something" .. foo()
-    end
-    return s
+        local s = ""
+        for ... do
+          s = s .. "something" .. foo()
+        end
+        return s
 
   Желательно:
 
-    local cat, concat = make_concatter()
-    for ... do
-      cat "something" (foo())
-    end
-    return concat()
+        local cat, concat = make_concatter()
+        for ... do
+          cat "something" (foo())
+        end
+        return concat()
 
 Функции
 =======
