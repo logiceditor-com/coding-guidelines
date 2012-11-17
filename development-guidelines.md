@@ -52,7 +52,31 @@
    тяжело просматривать в консоли на сервере.
 
 3. Первая строка в сообщении о коммите — краткое описание того, что случилось
-   (до 50-ти символов, не строго).
+   (до 50-ти символов, не строго). В commit message надо писать не только
+   ЧТО поменялось, но и ГДЕ. Очевидные части пути (например .lua в названии
+   файла) и точку в конце строки стоит опускать.
+
+   Примеры из lua-aplicado.
+   Плохо:
+
+        git_is_directory_dirty added.
+        luarocks_read,
+        missing exports fix
+        minor code clean-up
+
+   Удовлетворительно:
+
+        shell/git.lua: git_is_directory_dirty added.
+        lua-aplicado/shell/luarocks.lua: luarocks_read,
+        lua-aplicado/shell/luarocks.lua: missing exports fix
+        lua-aplicado/shell/luarocks.lua: minor code clean-up
+
+   Хорошо:
+
+        shell/git: git_is_directory_dirty added
+        shell/luarocks: luarocks_read, luarocks_show_rock_dir added
+        shell/luarocks: missing exports fix
+        shell/luarocks: minor code clean-up
 
 4. Если нужно детальное описание — оно идёт с отбивкой пустой строкой.
    Стандартные гитовые тулзы заточены на такой формат.
