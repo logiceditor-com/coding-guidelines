@@ -405,7 +405,7 @@ patch series на ревью кода лидом проекта.
    `[PATCH 1/3] commit message` до
    `[PATCH 1/3] commit message | project_name | ag/555/branch_name`
 
-4. Вместо `pk-format-patch` рекомендуется использовать утилиту
+4. Вместо `git-format-patch` рекомендуется использовать утилиту
    `pk-git-format-patch` из комплекта `pk-git-utils`
    http://github.com/logiceditor-com/pk-git-utils
 
