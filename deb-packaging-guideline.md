@@ -49,11 +49,16 @@ ubuntu-test
 Подключение тестового репозитория:
 
     wget -O - http://ubuntu-test.iphonestudio.ru/key.asc | sudo apt-key add -
-    sudo add-apt-repository "http://ubuntu-test.iphonestudio.ru/ unstable main"
+    sudo add-apt-repository "http://ubuntu-test.iphonestudio.ru/ ubuntu-test main"
     sudo apt-get update
 
 (Подключать этот репозиторий вне сборочницы, или специально созданых для 
 тестирования пакетов чрутов и виртуальных машин не рекомендуется.)
+
+По умолчанию он не активирован, и надо использовать опцию -t ubuntu-test при
+установке. Пример -- установка redis-server из тестового репозитория:
+
+    apt-get install -t ubuntu-test redis-server
 
 В тестовых целях допускается нумерация версий вида `iphonestudioN.M` (c точкой).
 Такие версии считать экспериментальными, за пределы `ubuntu-test` они выходить
