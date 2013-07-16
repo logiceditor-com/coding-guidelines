@@ -20,6 +20,8 @@
 Hungarian нотацию, в противовес содержательной Apps Hungarian.
 http://en.wikipedia.org/wiki/Hungarian_notation#Systems_vs._Apps_Hungarian)
 
+Имена переменных не должны перекрывать стандартное пространство имен (table, string, os и т.д.)
+
 Константы именуются ЗАГЛАВНЫМИ_БУКВАМИ.
 
     THE_ULTIMATE_ANSWER = 42
