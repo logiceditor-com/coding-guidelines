@@ -556,6 +556,17 @@ patch series на ревью кода лидом проекта.
     --       I indent TODO like this
     --       And so should you
 
+Комментарии не должны содержать отсылку на автора комментария.
+
+Неверно:
+
+    -- JD: I'll write tests for this later
+
+Верно:
+
+    -- TODO: Write tests
+    --       https://github.com/lua-nucleo/lua-nucleo/issues/1000
+
 #Общие рекомендации
 
 Не стоит пользоваться заглавными буквами в именах файлов без крайней нужды.
