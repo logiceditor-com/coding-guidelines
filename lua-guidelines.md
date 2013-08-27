@@ -255,8 +255,8 @@ function. Закрывающая скобка вызова ставится не
 
     writeln_flush(
         "-> blablablablablablablablablabla "
-    .. blabla_blabla
-    .. "': blablablablablablablablablabla"
+     .. blabla_blabla
+     .. "': blablablablablablablablablabla"
     )
 
 4)
@@ -348,8 +348,51 @@ function. Закрывающая скобка вызова ставится не
 
       io.stdout:flush()
 
-FIXME: Нужно описать: return and or, нестандартный сдвиг влево при
-конкатенации, многострочное условие if-then while-do for-do, (что ещё?!)
+###Другие многострочные конструкции
+
+Многострочный return с конструкцией (... and ... or ...) выравнивается одним
+из двух способов:
+
+Правильно:
+
+    return foo
+      and bar
+       or baz
+
+Тоже правильно:
+
+    return foo
+       and bar
+        or baz
+
+Многострочные условия if-then, while-do и for-do оформляются либо с одинарным
+отступом, либо с выравниванием по пробелу после логического оператора:
+
+Правильно:
+
+    if
+      foo and
+      bar
+    then
+      ...
+    end
+
+Тоже правильно:
+
+    if
+          foo
+      and bar
+    then
+      ...
+    end
+
+При переносе конкатенации (..) допускается нестандартный сдвиг с выравниванием
+по аргументам:
+
+    log(
+        "bar"
+     .. " baz"
+      )
 
 ##Избыточный синтаксис
 
