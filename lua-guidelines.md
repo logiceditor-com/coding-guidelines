@@ -630,9 +630,8 @@ function. Закрывающая скобка вызова ставится не
 
 ##Описание объектов
 
-Следует придерживаться следующего формата.
-
-FIXME: Раскрыть; описать варианты с метатаблицами и upvalue как допустимые, и случаи, в которых они предпочтительны.)
+Для создания объектов с однотипным поведением (методами) cледует использовать
+фабрики, которые должны быть написаны по следующему формату:
 
     local make_myobject
     do
@@ -650,6 +649,51 @@ FIXME: Раскрыть; описать варианты с метатаблиц
     end
 
 Поля таблицы с подчеркиванием в конце - приватные данные.
+
+В особых случаях, с разрешения техлида допускаются способы с использованием
+метатаблиц или upvalue.
+
+Пример с метатаблицей:
+
+    local make_myobject
+    do
+      local method = function(self, args)
+      end
+
+      local mt =
+      {
+        method = method;
+      }
+      mt = { __index = mt }
+
+      make_myobject = function(args)
+        return setmetatable(
+            {
+              private_variable_ = 42;
+            },
+            mt;
+          )
+      end
+    end
+
+Пример с upvalue:
+
+    local make_myobject
+    do
+      make_myobject = function(args)
+
+        local self =
+        {
+          private_variable_ = 42;
+        }
+
+        return
+        {
+          method = function(args)
+          end;
+        }
+      end
+    end
 
 ##Модули
 
