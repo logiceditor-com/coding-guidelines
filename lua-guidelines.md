@@ -640,11 +640,11 @@ function. Закрывающая скобка вызова ставится не
 
       make_myobject = function(args)
         return
-          {
-            method = method;
-            --
-            private_variable_ = 42;
-          }
+        {
+          method = method;
+          --
+          private_variable_ = 42;
+        }
       end
     end
 
