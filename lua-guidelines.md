@@ -708,7 +708,9 @@ function. Закрывающая скобка вызова ставится не
 В коде следует избегать использования безымянных "магических констант":
 http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants
 
-##Именование тестов
+##Тесты
+
+###Именование тестов
 
 Имя теста должно описывать, что проверяет тест. Имя должно писаться без пробелов;
 отдельные слова в имени разделяются дефисом.
@@ -750,6 +752,79 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
     test/cases/0010-example.lua
     test/cases/0020-first-test-in-group.lua
     test/cases/0021-second-test-in-group.lua
+
+###Отступы при оформлении тестов
+
+Если у теста очень длинное имя, и `(function()` не помещается на той же строке,
+рекоммендуется как-нибудь сократить имя, чтобы `function()` всё-таки уместилось.
+
+Не рекомендуется:
+
+    test:case "test-case-with-a-really-really-really-...-really-long-name" (
+        function()
+          ...
+        end
+      )
+
+Рекомендуется:
+
+    test:case "same-test-but-the-name-is-shortened-a-little" (function()
+      ...
+    end)
+
+Если тест создаётся с декораторами, и декоратор слишком длинный, такой что
+строка `:with(...DECORATOR...) (function()` не умещается в допустимую длину
+строки, рекомендуется разбить этот декоратор на строки как function call.
+
+Нежелательно (слишком большой отступ у тела теста):
+
+    test:case "some-test-case"
+      :with(temporary_directory("tmpdir", "tmp", "/long/long/path/to/dir")) (
+          function(env)
+            ...
+          end
+        )
+
+Тоже нежелательно (неправильный отступ у анонимной функции):
+
+    test:case "some-test-case"
+      :with(temporary_directory("tmpdir", "tmp", "/long/long/path/to/dir")) (
+    function(env)
+      ...
+    end)
+
+Хорошо:
+
+    test:case "some-test-case"
+      :with(
+          temporary_directory(
+              "tmpdir",
+              "tmp",
+              "/long/long/path/to/dir"
+            )
+        ) (function(env)
+      ...
+    end)
+
+###Тестовые значения и сообщения об ошибках
+
+Для тестовых строковых значений рекомендуется использовать что-нибудь всем
+хорошо знакомое, например "Lorem ipsum...".
+
+    local x = "Lorem " .. "ipsum"
+    ensure_equals("concatenation works", x, "Lorem ipsum")
+
+Сообщение в `ensure*()` должно отражать суть проверяемого факта:
+
+Плохо:
+
+    local status = os.execute("./script")
+    ensure_equals("okay", status, 0)
+
+Хорошо:
+
+    local status = os.execute("./script")
+    ensure_equals("script executed successfully", status, 0)
 
 ##Устаревшие и запрещенные выражения языка
 
