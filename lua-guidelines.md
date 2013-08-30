@@ -248,8 +248,8 @@ function. Закрывающая скобка вызова ставится не
         = luarocks_parse_installed_rocks(
             remote_luarocks_list_installed_rocks(
                 machine.external_url
-            )
-        )
+              )
+          )
 
 3) Допускается свешивание `..` при переносах
 
@@ -267,15 +267,15 @@ function. Закрывающая скобка вызова ставится не
 5)
 
     if
-       long_function_name(
-             with,
-             many,
-             many,
-             parameters
-         ) == other_long_function(
-             the,
-             same
-         )
+      long_function_name(
+          with,
+          many,
+          many,
+          parameters
+        ) == other_long_function(
+          the,
+          same
+        )
     then
       body
     end
@@ -726,7 +726,7 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 Пример:
 
     test:case "shell_escape-empty-string" (function ()
-        ensure_strequals("shell_escape for an empty string", shell_escape(""), "''")
+      ensure_strequals("shell_escape for an empty string", shell_escape(""), "''")
     end)
 
 Правильной записью для конструктора сюиты является:
