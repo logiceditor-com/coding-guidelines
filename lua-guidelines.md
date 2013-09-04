@@ -725,7 +725,7 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 
 Пример:
 
-    test:case "shell_escape-empty-string" (function ()
+    test:case "shell_escape-empty-string" (function()
       ensure_strequals("shell_escape for an empty string", shell_escape(""), "''")
     end)
 
