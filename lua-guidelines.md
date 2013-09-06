@@ -833,6 +833,28 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
     local status = os.execute("./script")
     ensure_equals("script executed successfully", status, 0)
 
+Если по сценарию теста необходимо (например, для тестирования обработки ошибок)
+вызвать программную ошибку (`error`, `return nil, err` и подобные), особенно
+такую, обработка которой вызывает запись в лог, то в тексте такой ошибки нужно
+явно указывать, что ошибка — ожидаемая (при наличии такой возможности).
+
+Пример:
+
+    ensure_returns(
+        "some check",
+        2,
+        { false, "expected error" },
+        xpcall(
+            function()
+              error("expected error")
+            end,
+            function(msg)
+              log_error("foo failed:",  debug.traceback(foo))
+              return foo
+            end
+          )
+      )
+
 ##Устаревшие и запрещенные выражения языка
 
 Текущим стандартом языка является Lua 5.1. Нельзя использовать в коде
