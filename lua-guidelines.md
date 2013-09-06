@@ -22,6 +22,13 @@ http://en.wikipedia.org/wiki/Hungarian_notation#Systems_vs._Apps_Hungarian)
 
 Имена переменных не должны перекрывать стандартное пространство имен (table, string, os и т.д.)
 
+В именах переменных не рекомендуется использовать неустоявшиеся сокращения.
+Рекомендуется использовать идиоматические имена переменных в подходящих случаях.
+Некоторые примеры:
+
+    local res, err = foo()
+    local ok, res, err = xpcall(function() return foo() end)
+
 Константы именуются ЗАГЛАВНЫМИ_БУКВАМИ.
 
     THE_ULTIMATE_ANSWER = 42
