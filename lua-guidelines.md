@@ -954,6 +954,16 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 
     log("values: b =", b, "; c =", c)
 
+Нежелательно писать содержимое переменной в лог без поясняющего текста.
+
+Неверно:
+
+    log(b, c)
+
+Верно:
+
+    log("values: b =", b, "; c =", c)
+
 ###Обязательное логирование
 
 1. math.randomseed при его установке в какое-либо значение
