@@ -899,7 +899,8 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 
 ###Использование логгеров
 
-В логгерах нет необходимости использовать функции преобразования к строке. Это происходит автоматически
+В логгерах нет необходимости использовать функции преобразования к строке. Это
+происходит автоматически
 
 Неверно:
 
@@ -915,34 +916,35 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
     local b = false
     log(t, n, b)
 
-В логгерах запрещено использовать многострочные комментарии, это связано с особенностями парсинга строк
-логов сервисов в боевом режиме.
+В логгерах запрещено использовать многострочные комментарии, это связано
+с особенностями парсинга строк логов сервисов в боевом режиме.
 
 Неверно:
 
-    log("values:\nb = ", b, "\n c = ", c)
+    log("values:\nb =", b, "\n c =", c)
 
 Верно:
 
-    log("values: b = ", b, "; c = ", c)
+    log("values: b =", b, "; c =", c)
 
 
-Используйте адекватные ситуации логгеры, для ошибок - log_error, для рутиннной информации - log,
-для отладки - dbg.
+Используйте адекватные ситуации логгеры, для ошибок - log_error, для рутиннной
+информации - log, для отладки - dbg.
 
 Неверно:
 
-    log("values: b = ", b)
-    log("THIS IS ERROR!!! b = ", b)
-    log("debug output: b = ", b)
+    log("values: b =", b)
+    log("THIS IS ERROR!!! b =", b)
+    log("debug output: b =", b)
 
 Верно:
 
-    log("values: b = ", b)
-    log_error("wrong value b = ", b)
-    dbg("b = ", b) -- TODO: remove after debug is over
+    log("values: b =", b)
+    log_error("wrong value b =", b)
+    dbg("b =", b) -- TODO: remove after debug is over
 
-По возможности не используйте конкатенацию внутри логгеров, передавайте информацию в виде набора переменных.
+По возможности не используйте конкатенацию внутри логгеров, передавайте
+информацию в виде набора переменных.
 
 Неверно:
 
@@ -950,7 +952,7 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 
 Верно:
 
-    log("values: b = ", b, "; c = ", c)
+    log("values: b =", b, "; c =", c)
 
 ###Обязательное логирование
 
