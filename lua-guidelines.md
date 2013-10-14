@@ -827,6 +827,9 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_consta
 
 ###Тестовые значения и сообщения об ошибках
 
+Рекомендуется вместо `assert(condition)` использовать высокоуровневые функции из
+`lua-nucleo`, напр. `ensure(success_message, condition)`.
+
 Для тестовых строковых значений рекомендуется использовать что-нибудь всем
 хорошо знакомое, например "Lorem ipsum...".
 
