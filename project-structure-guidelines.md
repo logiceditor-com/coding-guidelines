@@ -28,6 +28,42 @@ $SHA - хэш первого коммита.
 
     git format-patch --root
 
+### Приблизительная структура библиотечного проекта
+
+    <lib-name>/
+      etc/
+        git/
+          hooks/
+            pre-commit
+        [list-exports/]
+          [config.lua]
+          [list-exports]
+      src/
+        <code language>/
+          <lib-name>/
+            <code-files>.lua
+            ...
+        ...
+      rockspec/
+        [gen-rockspecs]
+        [pk-rocks-manifest.lua]
+        [rockspec.template]
+        <lib-name>-<version>.rockspec
+        ...
+      test/
+        cases/
+          [0010-<module>.lua]
+          [0020-<dir-module>.lua]
+          [0030-<module-part>.lua]
+          [0031-<module-another_part>.lua]
+        [data/]
+          [<test-data>]
+      COPYRIGHT
+      [HISTORY]
+      make.sh
+      README
+      .gitignore
+
 ## Прототип на движке Unity 3D
 
     <git-repo-name>/
