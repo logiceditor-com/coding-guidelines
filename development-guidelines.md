@@ -61,27 +61,9 @@
    ЧТО поменялось, но и ГДЕ. Очевидные части пути (например .lua в названии
    файла) и точку в конце строки стоит опускать.
 
-   Примеры из lua-aplicado.
-   Плохо:
+   Приветствуется использование [тэгов][tagging].
 
-        git_is_directory_dirty added.
-        luarocks_read,
-        missing exports fix
-        minor code clean-up
-
-   Удовлетворительно:
-
-        shell/git.lua: git_is_directory_dirty added.
-        lua-aplicado/shell/luarocks.lua: luarocks_read,
-        lua-aplicado/shell/luarocks.lua: missing exports fix
-        lua-aplicado/shell/luarocks.lua: minor code clean-up
-
-   Хорошо:
-
-        shell/git: git_is_directory_dirty added
-        shell/luarocks: luarocks_read, luarocks_show_rock_dir added
-        shell/luarocks: missing exports fix
-        shell/luarocks: minor code clean-up
+     [tagging]: https://github.com/logiceditor-com/coding-guidelines/blob/master/tag-guidelines.md
 
 1. Если нужно детальное описание — оно идёт с отбивкой пустой строкой.
    Стандартные гитовые тулзы заточены на такой формат.
