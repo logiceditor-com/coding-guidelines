@@ -61,27 +61,9 @@
    ЧТО поменялось, но и ГДЕ. Очевидные части пути (например .lua в названии
    файла) и точку в конце строки стоит опускать.
 
-   Примеры из lua-aplicado.
-   Плохо:
+   Приветствуется использование [тэгов][tagging].
 
-        git_is_directory_dirty added.
-        luarocks_read,
-        missing exports fix
-        minor code clean-up
-
-   Удовлетворительно:
-
-        shell/git.lua: git_is_directory_dirty added.
-        lua-aplicado/shell/luarocks.lua: luarocks_read,
-        lua-aplicado/shell/luarocks.lua: missing exports fix
-        lua-aplicado/shell/luarocks.lua: minor code clean-up
-
-   Хорошо:
-
-        shell/git: git_is_directory_dirty added
-        shell/luarocks: luarocks_read, luarocks_show_rock_dir added
-        shell/luarocks: missing exports fix
-        shell/luarocks: minor code clean-up
+     [tagging]: https://github.com/logiceditor-com/coding-guidelines/blob/master/tag-guidelines.md
 
 1. Если нужно детальное описание — оно идёт с отбивкой пустой строкой.
    Стандартные гитовые тулзы заточены на такой формат.
@@ -99,6 +81,36 @@
 1. При заведении нового репозитория первый коммит должен иметь сообщение
    `initial commit` и иметь определенную структуру. Его описание см. в
    [project-structure-guidelines](project-structure-guidelines.md#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D1%81-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%BC-%D0%BD%D0%B0-lua).
+
+Примеры:
+
+* Плохо:
+
+  `git_is_directory_dirty added.`
+  `luarocks_read,`
+  `missing exports fix`
+  `minor code clean-up`
+
+* Удовлетворительно:
+
+  `shell/git.lua: git_is_directory_dirty added.`
+  `lua-aplicado/shell/luarocks.lua: luarocks_read,`
+  `lua-aplicado/shell/luarocks.lua: missing exports fix`
+  `lua-aplicado/shell/luarocks.lua: minor code clean-up`
+
+* Хорошо:
+
+  `shell/git: git_is_directory_dirty added`
+  `shell/luarocks: luarocks_read, luarocks_show_rock_dir added`
+  `shell/luarocks: missing exports fix`
+  `shell/luarocks: minor code clean-up`
+
+* Хорошо, с тэгами:
+
+  `[+] [shell/git] <git_is_directory_dirty> added.`
+  `[+] [shell/luarocks] luarocks_read(), luarocks_show_rock_dir() added.`
+  `[*] [shell/luarocks] Missing exports fix.`
+  `[.^] [shell/luarocks] Minor code clean-up.`
 
 # Добавление внешнего кода / библиотек в репозиторий
 
