@@ -404,7 +404,7 @@ function. Закрывающая скобка вызова ставится не
     log(
         "bar"
      .. " baz"
-      )
+    )
 
 ##Избыточный синтаксис
 
@@ -541,17 +541,17 @@ function. Закрывающая скобка вызова ставится не
 ####Штатная проверка аргументов
 
     local is_log_enabled_raw = function(
-        modules_config,
-        levels_config,
-        module_name,
-        level
-      )
+      modules_config,
+      levels_config,
+      module_name,
+      level
+    )
       arguments(
-          "table", levels_config,
-          "table", modules_config,
-          "string", module_name,
-          "number", level
-        )
+        "table", levels_config,
+        "table", modules_config,
+        "string", module_name,
+        "number", level
+      )
       ...
     end
 
@@ -560,8 +560,8 @@ function. Закрывающая скобка вызова ставится не
     local foo = function(bar)
       bar = bar or BAZ
       arguments(
-          "quo", bar
-        )
+        "quo", bar
+      )
 
 ##Конструкторы таблиц
 
@@ -692,11 +692,11 @@ function. Закрывающая скобка вызова ставится не
 
       make_myobject = function(args)
         return setmetatable(
-            {
-              private_variable_ = 42;
-            },
-            mt;
-          )
+          {
+            private_variable_ = 42;
+          },
+          mt;
+        )
       end
     end
 
@@ -881,10 +881,10 @@ function. Закрывающая скобка вызова ставится не
 Не рекомендуется:
 
     test:case "test-case-with-a-really-really-really-...-really-long-name" (
-        function()
-          ...
-        end
-      )
+      function()
+        ...
+      end
+    )
 
 Рекомендуется:
 
@@ -900,10 +900,10 @@ function. Закрывающая скобка вызова ставится не
 
     test:case "some-test-case"
       :with(temporary_directory("tmpdir", "tmp", "/long/long/path/to/dir")) (
-          function(env)
-            ...
-          end
-        )
+        function(env)
+          ...
+        end
+      )
 
 Тоже нежелательно (неправильный отступ у анонимной функции):
 
@@ -917,12 +917,12 @@ function. Закрывающая скобка вызова ставится не
 
     test:case "some-test-case"
       :with(
-          temporary_directory(
-              "tmpdir",
-              "tmp",
-              "/long/long/path/to/dir"
-            )
-        ) (function(env)
+        temporary_directory(
+          "tmpdir",
+          "tmp",
+          "/long/long/path/to/dir"
+        )
+      ) (function(env)
       ...
     end)
 
@@ -957,19 +957,19 @@ function. Закрывающая скобка вызова ставится не
 Пример:
 
     ensure_returns(
-        "some check",
-        2,
-        { false, "expected error" },
-        xpcall(
-            function()
-              error("expected error")
-            end,
-            function(msg)
-              log_error("foo failed:",  debug.traceback(foo))
-              return foo
-            end
-          )
+      "some check",
+      2,
+      { false, "expected error" },
+      xpcall(
+        function()
+          error("expected error")
+        end,
+        function(msg)
+          log_error("foo failed:",  debug.traceback(foo))
+          return foo
+        end
       )
+    )
 
 ##Устаревшие и запрещенные выражения языка
 
@@ -1109,9 +1109,9 @@ error message, необходимо в обязательном порядке �
 Неверно:
 
     assert(
-        a == b,
-        "value of a: " .. tstr(a) .. "  is not equal to value of b: " .. tstr(b)
-      )
+      a == b,
+      "value of a: " .. tstr(a) .. "  is not equal to value of b: " .. tstr(b)
+    )
 
 Верно:
 
