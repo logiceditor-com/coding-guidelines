@@ -211,18 +211,17 @@ begin()-end()-подобными парными конструкциями.
 
     TODO: example
 
-При разделении вызова функции на несколько строк, аргументы функции сдвигаются
-на ДВА отступа, закрывающая скобка — на один относительно строки с
-открывающей. Открывающую скобку желательно ставить на той же строке, что и имя
+При разделении вызова функции на несколько строк аргументы функции сдвигаются
+на один отступ. Открывающую скобку желательно ставить на той же строке, что и имя
 функции. Желательно в этом случае писать каждый аргумент функции на новой
 строке. Отступы в объявлении функции оформляются аналогично.
 
     long_function_name(
-        with,
-        many,
-        many,
-        parameters
-      )
+      with,
+      many,
+      many,
+      parameters
+    )
 
 Если при вызове функции ей передаётся единственный аргумент, и этот аргумент —
 анонимная функция, создаваемая конструкцией function-end непосредственно в
@@ -244,24 +243,24 @@ function. Закрывающая скобка вызова ставится не
 1)
 
     assert(
-        action_handlers[action.tool],
-        "unknown tool"
-      )(
-        manifest,
-        cluster_info,
-        param,
-        machine,
-        role_args,
-        action
-      )
+      action_handlers[action.tool],
+      "unknown tool"
+    )(
+      manifest,
+      cluster_info,
+      param,
+      machine,
+      role_args,
+      action
+    )
 
 2)
 
     machine.installed_rocks_set, machine.duplicate_rocks_set
         = luarocks_parse_installed_rocks(
             remote_luarocks_list_installed_rocks(
-                machine.external_url
-              )
+              machine.external_url
+            )
           )
 
 3) Допускается свешивание `..` при переносах
@@ -281,14 +280,14 @@ function. Закрывающая скобка вызова ставится не
 
     if
       long_function_name(
-          with,
-          many,
-          many,
-          parameters
-        ) == other_long_function(
-          the,
-          same
-        )
+        with,
+        many,
+        many,
+        parameters
+      ) == other_long_function(
+        the,
+        same
+      )
     then
       body
     end
@@ -296,10 +295,10 @@ function. Закрывающая скобка вызова ставится не
 6)
 
     local func_name = function(
-        param1,
-        param2,
-        longname3
-      )
+      param1,
+      param2,
+      longname3
+    )
       body
     end
 
