@@ -695,7 +695,7 @@ function. Закрывающая скобка вызова ставится не
           {
             private_variable_ = 42;
           },
-          mt;
+          mt
         )
       end
     end
