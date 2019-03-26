@@ -212,17 +212,16 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
     TODO: example
 
 При разделении вызова функции на несколько строк аргументы функции сдвигаются
-на ДВА отступа, закрывающая скобка — на один относительно строки с
-открывающей. Открывающую скобку желательно ставить на той же строке, что и имя
+на один отступ. Открывающую скобку желательно ставить на той же строке, что и имя
 функции. Желательно в этом случае писать каждый аргумент функции на новой
 строке. Отступы в объявлении функции оформляются аналогично.
 
     long_function_name(
-        with,
-        many,
-        many,
-        parameters
-      )
+      with,
+      many,
+      many,
+      parameters
+    )
 
 Если при вызове функции ей передаётся единственный аргумент, и этот аргумент —
 анонимная функция, создаваемая конструкцией `function`-`end` непосредственно в
@@ -244,24 +243,24 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 1)
 
     assert(
-        action_handlers[action.tool],
-        "unknown tool"
-      )(
-        manifest,
-        cluster_info,
-        param,
-        machine,
-        role_args,
-        action
-      )
+      action_handlers[action.tool],
+      "unknown tool"
+    )(
+      manifest,
+      cluster_info,
+      param,
+      machine,
+      role_args,
+      action
+    )
 
 2)
 
     machine.installed_rocks_set, machine.duplicate_rocks_set
         = luarocks_parse_installed_rocks(
             remote_luarocks_list_installed_rocks(
-                machine.external_url
-              )
+              machine.external_url
+            )
           )
 
 3) Допускается свешивание `..` при переносах:
@@ -281,14 +280,14 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 
     if
       long_function_name(
-          with,
-          many,
-          many,
-          parameters
-        ) == other_long_function(
-          the,
-          same
-        )
+        with,
+        many,
+        many,
+        parameters
+      ) == other_long_function(
+        the,
+        same
+      )
     then
       body
     end
@@ -296,10 +295,10 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 6)
 
     local func_name = function(
-        param1,
-        param2,
-        longname3
-      )
+      param1,
+      param2,
+      longname3
+    )
       body
     end
 
@@ -405,7 +404,7 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
     log(
         "bar"
      .. " baz"
-      )
+    )
 
 ## Избыточный синтаксис
 
@@ -542,17 +541,17 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 #### Штатная проверка аргументов
 
     local is_log_enabled_raw = function(
-        modules_config,
-        levels_config,
-        module_name,
-        level
-      )
+      modules_config,
+      levels_config,
+      module_name,
+      level
+    )
       arguments(
-          "table", levels_config,
-          "table", modules_config,
-          "string", module_name,
-          "number", level
-        )
+        "table", levels_config,
+        "table", modules_config,
+        "string", module_name,
+        "number", level
+      )
       ...
     end
 
@@ -561,8 +560,8 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
     local foo = function(bar)
       bar = bar or BAZ
       arguments(
-          "quo", bar
-        )
+        "quo", bar
+      )
 
 ## Конструкторы таблиц
 
@@ -693,11 +692,11 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 
       make_myobject = function(args)
         return setmetatable(
-            {
-              private_variable_ = 42;
-            },
-            mt;
-          )
+          {
+            private_variable_ = 42;
+          },
+          mt
+        )
       end
     end
 
@@ -893,10 +892,10 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 Не рекомендуется:
 
     test:case "test-case-with-a-really-really-really-...-really-long-name" (
-        function()
-          ...
-        end
-      )
+      function()
+        ...
+      end
+    )
 
 Рекомендуется:
 
@@ -912,10 +911,10 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 
     test:case "some-test-case"
       :with(temporary_directory("tmpdir", "tmp", "/long/long/path/to/dir")) (
-          function(env)
-            ...
-          end
-        )
+        function(env)
+          ...
+        end
+      )
 
 Тоже нежелательно (неправильный отступ у анонимной функции):
 
@@ -929,12 +928,12 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 
     test:case "some-test-case"
       :with(
-          temporary_directory(
-              "tmpdir",
-              "tmp",
-              "/long/long/path/to/dir"
-            )
-        ) (function(env)
+        temporary_directory(
+          "tmpdir",
+          "tmp",
+          "/long/long/path/to/dir"
+        )
+      ) (function(env)
       ...
     end)
 
@@ -969,19 +968,19 @@ need_*, should_*, must_*, in_*, not_*`` и т.п.
 Пример:
 
     ensure_returns(
-        "some check",
-        2,
-        { false, "expected error" },
-        xpcall(
-            function()
-              error("expected error")
-            end,
-            function(msg)
-              log_error("foo failed:",  debug.traceback(foo))
-              return foo
-            end
-          )
+      "some check",
+      2,
+      { false, "expected error" },
+      xpcall(
+        function()
+          error("expected error")
+        end,
+        function(msg)
+          log_error("foo failed:",  debug.traceback(foo))
+          return foo
+        end
       )
+    )
 
 ## Устаревшие и запрещенные выражения языка
 
@@ -1121,9 +1120,9 @@ error message, необходимо в обязательном порядке �
 Неверно:
 
     assert(
-        a == b,
-        "value of a: " .. tstr(a) .. "  is not equal to value of b: " .. tstr(b)
-      )
+      a == b,
+      "value of a: " .. tstr(a) .. "  is not equal to value of b: " .. tstr(b)
+    )
 
 Верно:
 
