@@ -12,16 +12,16 @@
 ```c
 function foo()
 {
-  //Do something
+    //Do something
 }
 
 if (price > 0)
 {
-  //Positive
+    //Positive
 }
 else
 {
-  //Negative
+    //Negative
 }
 ```
 
@@ -31,10 +31,10 @@ else
 
 ```c
 if (price > 0)
-  foo();
+    foo();
   
 for (i = 0; i < 10; i++)
-  foo(i);
+    foo(i);
 ```
 
 Правильная запись:
@@ -42,12 +42,12 @@ for (i = 0; i < 10; i++)
 ```c
 if (price > 0)
 {
-  foo();
+    foo();
 }
 
 for (var i=0; i<10; i++)
 {
-  foo(i);
+    foo(i);
 }
 ```
 
@@ -58,7 +58,7 @@ for (var i=0; i<10; i++)
 
 Максимальная длина строки — 78 символов.
 
-Единичный отступ оформляется в 2 пробела. Использование табов запрещено.
+Единичный отступ оформляется в 2 или 4 пробела в зависимости от того, как принято на проекте. Использование табов запрещено.
 
 Бинарные операторы отбиваются с обеих сторон пробелом. Унарные операторы пишутся
 слитно с переменной. Тернарный оператор отбивается пробелами.
@@ -77,7 +77,7 @@ int c = (a > 0) ? 'yes' : 'no';
 ```c
 if (condition)
 {
-  //do something
+    //do something
 }
 ```
 
@@ -149,8 +149,8 @@ a = (foo || bar)
 (a BOOLOP b) ? op1 : op2;
 
 return (long_name_one && long_name_two)
-  ? (long_name_three != long_name_four)
-  : false;
+    ? (long_name_three != long_name_four)
+    : false;
 ```
 
 за исключением подобных ситуаций:
