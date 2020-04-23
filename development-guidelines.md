@@ -2,8 +2,8 @@
 
 На всех девелоперских машинах обязательно иметь настроенными
 
-    git config --global user.name "User Name"
-    git config --global user.email "user@example.com"
+    git config --global user.name "Real Name"
+    git config --global user.email "user@logiceditor.com"
 
 У каждого коммиттера должна быть своя уникальная пара user.name / user.email,
 чтобы знать, кого бить по рукам в случае чего. Коммиттеры не должны использовать
